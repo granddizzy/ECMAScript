@@ -19,7 +19,7 @@ function createCounter() {
     },
     getValue: function () {
       return counter;
-    }
+    },
   }
 }
 
