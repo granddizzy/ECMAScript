@@ -2,7 +2,7 @@ class ZooAnimal {
   #name;
   #age;
   #gender;
-  static maxAge = 20;
+  static #maxAge = 20;
 
   constructor(name, age, gender) {
     this.#name = name;
@@ -21,7 +21,7 @@ class ZooAnimal {
   }
 
   changeAge(newAge) {
-    if (newAge > 0 && newAge <= ZooAnimal.maxAge) {
+    if (newAge > 0 && newAge <= ZooAnimal.#maxAge) {
       this.#age = newAge;
     } else {
       throw new Error("Age not valid!");
