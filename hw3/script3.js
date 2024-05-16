@@ -2,11 +2,9 @@ class ZooAnimal {
   #name;
   #age;
   #gender;
-  static maxAge;
+  static maxAge = 20;
 
   constructor(name, age, gender) {
-    ZooAnimal.maxAge = 20;
-
     this.#name = name;
 
     if (gender === 'male' || gender === 'female') {
@@ -31,9 +29,11 @@ class ZooAnimal {
   }
 
   getAnimalInfo() {
-    return `Name:${this.#name} Age:${this.#age} Gender:${this.#gender}`;
+    return `Name:${this.#name}\nAge:${this.#age}\nGender:${this.#gender}`;
   }
 }
 
 const Animal = new ZooAnimal("Dog1", 5, "male");
 console.log(Animal.getAnimalInfo());
+const Animal2 = new ZooAnimal("Dog2", 25, "male");
+console.log(Animal2.getAnimalInfo());

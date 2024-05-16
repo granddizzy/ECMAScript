@@ -5,6 +5,10 @@ class Employee {
   }
 
   getInfo() {
+    return `Name:${this.#name}`;
+  }
+
+  getName() {
     return this.#name;
   }
 }
@@ -18,7 +22,7 @@ class Manager extends Employee {
   }
 
   getInfo() {
-    return `${super.getInfo()} ${this.#department}`;
+    return `Name:${super.getName()}\nDepartment:${this.#department}`;
   }
 }
 

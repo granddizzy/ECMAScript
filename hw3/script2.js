@@ -1,6 +1,7 @@
 class Order {
+  #orderNumber;
   constructor(orderNumber) {
-    this.orderNumber = orderNumber;
+    this.#orderNumber = orderNumber;
     this.products = [];
   }
 
@@ -11,12 +12,27 @@ class Order {
   getTotalPrice() {
     return this.products.reduce((total, el) => total + el.price, 0);
   }
+
+  getOrderNumber() {
+    return this.#orderNumber;
+  }
 }
 
 class Product {
+  #name;
+  #price;
+
   constructor(name, price) {
-    this.name = name;
-    this.price = price;
+    this.#name = name;
+    this.#price = price;
+  }
+
+  getName() {
+    return this.#name;
+  }
+
+  getPrice() {
+    return this.#price;
   }
 }
 
