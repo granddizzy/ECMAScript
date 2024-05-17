@@ -10,7 +10,7 @@ class Order {
   }
 
   getTotalPrice() {
-    return this.products.reduce((total, el) => total + el.price, 0);
+    return this.products.reduce((total, el) => total + el.getPrice(), 0);
   }
 
   getOrderNumber() {
