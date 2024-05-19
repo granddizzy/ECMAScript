@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="./script.js" defer type="module"></script>
+  <link rel="stylesheet" href="./style.css">
+  <title>Users information</title>
+</head>
+<body>
+<section class="mainSection container">
+  <template id="userTemplate">
+    <div class="userContainer">
+      <div class="userContainer__info userInfo">
+        <h2 class="userInfo__name"></h2>
+        <p><strong>Username:</strong> <span class="userInfo__username"></span></p>
+        <p><strong>Email:</strong> <span class="userInfo__email"></span></p>
+        <p><strong>Phone:</strong> <span class="userInfo__phone"></span></p>
+        <p><strong>Website:</strong> <a class="userInfo__website" href="#" target="_blank"></a></p>
+      </div>
+      <div class="userContainer__address address">
+        <h3>Address</h3>
+        <p><strong>Street:</strong> <span class="address__street"></span></p>
+        <p><strong>Suite:</strong> <span class="address__suite"></span></p>
+        <p><strong>City:</strong> <span class="address__city"></span></p>
+        <p><strong>Zipcode:</strong> <span class="address__zipcode"></span></p>
+        <p><strong>Geo:</strong> Lat: <span class="address__lat"></span>, Lng: <span class="address__lng"></span></p>
+      </div>
+      <div class="userContainer__company company">
+        <h3>Company</h3>
+        <p><strong>Name:</strong> <span class="company__name"></span></p>
+        <p><strong>Catch Phrase:</strong> <span class="company__catchPhrase"></span></p>
+        <p><strong>BS:</strong> <span class="company__bs"></span></p>
+      </div>
+    </div>
+  </template>
+</section>
+</body>
+</html>

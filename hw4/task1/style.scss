@@ -1,0 +1,59 @@
+@import "default";
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.mainSection {
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.container {
+  max-width: 1500px;
+  margin: auto;
+}
+
+.userContainer {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.userContainer h1 {
+  text-align: center;
+  
+  &__info {
+    margin-bottom: 20px;
+    
+    h2 {
+      margin: 0;
+    }
+  }
+}
+
+.address, .company {
+  margin-top: 10px;
+  
+  h3 {
+    margin: 5px 0;
+  }
+}
+
+@media (max-width: 1172px) {
+  .mainSection {
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media (max-width: 570px) {
+  .mainSection {
+    grid-template-columns:1fr;
+  }
+}
