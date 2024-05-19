@@ -1,6 +1,8 @@
 const url1 = 'https://dog.ceo/api/breeds/image/random';
 const mainSectionEl = document.querySelector('.mainSection');
-const imgEl = mainSectionEl.querySelector('img');
+const beforeImgEl = mainSectionEl.querySelector('.beforeImg');
+const afterImgEl = mainSectionEl.querySelector('.afterImg');
+const startSlideEl = mainSectionEl.querySelector('.startSlide');
 
 const getData = async (url) => {
   try {
@@ -11,13 +13,40 @@ const getData = async (url) => {
   }
 };
 
-for (let i = 0; i < 10; i++) {
+function startSlide() {
+  const countSlide = 3;
+  const interval = 3;
+
+  startSlideEl.style.display = 'none';
+
+  for (let i = 0; i < countSlide; i++) {
+    setTimeout(async () => {
+      const data = await getData(url1);
+      showImage(data.message, i % 2);
+    }, i * 1000 * interval);
+  }
+
   setTimeout(async () => {
-    const data = await getData(url1);
-    showImage(data.message);
-  }, i * 3000);
+    afterImgEl.style.opacity = '0';
+    beforeImgEl.style.opacity = '0';
+    startSlideEl.style.display = 'block'
+  }, (countSlide - 1) * 1000 * interval + 1000 * interval);
 }
 
-function showImage(imgUrl) {
-  imgEl.src = imgUrl;
+function showImage(imgUrl, mode) {
+  if (mode === 0) {
+    afterImgEl.src = imgUrl;
+    afterImgEl.style.opacity = '1';
+    beforeImgEl.style.opacity = '0';
+  } else {
+    beforeImgEl.src = imgUrl;
+    afterImgEl.style.opacity = '0';
+    beforeImgEl.style.opacity = '1';
+  }
 }
+
+startSlideEl.addEventListener('click', () => {
+  startSlide();
+});
+
+startSlide();
