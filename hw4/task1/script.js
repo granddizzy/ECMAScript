@@ -20,8 +20,18 @@ fetchData.forEach(
   }
 )
 
+mainSectionEl.addEventListener('click', (e) => {
+  if (e.target.classList.contains('userContainer__deleteCross')) {
+    const closestParent = e.target.closest('.userContainer');
+    const userId = closestParent.getAttribute('data-id');
+    deleteUser(userId);
+  }
+});
+
 function getCompletedTemplate(userData) {
   const userContainerEl = userContainerTemplateEl.content.cloneNode(true);
+
+  userContainerEl.querySelector(".userContainer").setAttribute('data-id', userData.id)
 
   userContainerEl.querySelector(".userInfo__name").textContent = userData.name;
   userContainerEl.querySelector(".userInfo__username").textContent = userData.username;
@@ -40,4 +50,9 @@ function getCompletedTemplate(userData) {
   userContainerEl.querySelector(".company__bs").textContent = userData.company.bs;
 
   return userContainerEl;
+}
+
+function deleteUser(userId) {
+  const delEl = mainSectionEl.querySelector(`[data-id="${userId}"]`);
+  delEl.remove();
 }
