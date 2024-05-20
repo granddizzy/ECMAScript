@@ -25,7 +25,9 @@ async function saveUserData(user, url) {
   }
 }
 
-getUserData(1)
+const url = "https://example.com/";
+
+getUserData(1, url)
   .then(data => console.log('User Data:', data))
   .catch(error => console.log('Error:', error.message));
 
@@ -35,7 +37,7 @@ const user = {
   email: 'john@example.com'
 };
 
-saveUserData(user)
+saveUserData(user, url)
   .then((message) => {
     console.log(message);
   })

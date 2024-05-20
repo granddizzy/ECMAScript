@@ -14,7 +14,7 @@ const getData = async (url) => {
 };
 
 function startSlide() {
-  const countSlide = 3;
+  const countSlide = 10;
   const interval = 3;
 
   startSlideEl.style.display = 'none';
